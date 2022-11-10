@@ -3,10 +3,50 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:WpfApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+        Title="MainWindow" Height="150" Width="400"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}">
+    <materialDesign:ColorZone HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+                <ToolBarTray>
+                    <ToolBar Style="{StaticResource MaterialDesignToolBar}" Background="AliceBlue"
+                             ClipToBounds="False">
+                        <Border BorderBrush="{StaticResource MaterialDesignDarkForeground}" BorderThickness="1">
+                            <Button ToolTip="Follow me on Twitter"
+                                    Content="{materialDesign:PackIcon Kind=Twitter}" />
+                        </Border>
+                        <Border BorderBrush="{StaticResource MaterialDesignDarkForeground}" BorderThickness="1">
+                            <Button ToolTip="Save"
+                                    Content="{materialDesign:PackIcon Kind=ContentSave}" />
+                        </Border>
+                    </ToolBar>
+                </ToolBarTray>
+            <ToolBarTray Grid.Column="1" Orientation="Vertical">
+                <ToolBar Style="{StaticResource MaterialDesignToolBar}"
+                         Background="AliceBlue"
+                         ClipToBounds="False">
+                    <Border BorderBrush="{StaticResource MaterialDesignDarkForeground}" BorderThickness="1">
+                        <Button ToolTip="Follow me on Twitter"
+                                Content="{materialDesign:PackIcon Kind=Twitter}" />
+                    </Border>
+                    <Border BorderBrush="{StaticResource MaterialDesignDarkForeground}" BorderThickness="1">
+                        <Button ToolTip="Save"
+                                Content="{materialDesign:PackIcon Kind=ContentSave}" />
+                    </Border>
+                </ToolBar>
+            </ToolBarTray>
+        </Grid>
+    </materialDesign:ColorZone>
 </Window>
